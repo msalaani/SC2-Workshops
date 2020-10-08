@@ -1,3 +1,7 @@
+[TOCM]
+
+[TOC]
+
 # System Encodings
 
 ##### ASCII ( Usually Base10 - Decimal )
