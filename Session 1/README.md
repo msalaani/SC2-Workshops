@@ -1,12 +1,15 @@
 # System Encodings
 
-##### ascii ( Usually Base10 - Decimal )
-every byte (8-bits) has an id (number) to allow the operating system(windows,linux,android,macOS) or browser or every other application to recognize it.
-Ascii codes are regrouped in ascii table where only printable characters have code from 32 (SPACE) up to 126 (~)
+##### ASCII ( Usually Base10 - Decimal )
+Every byte (8-bits) has an id (number) to allow the operating system(windows,linux,android,macOS) or browser or every other application to recognize it.
+Ascii codes are regrouped in ascii table where only printable characters have code from 32 (SPACE) up to 126 (~).
+
+Composed by an alphabet of
+`0123456789`
 
 ![](http://www.asciitable.com/index/asciifull.gif)
 
-in python  
+In python  
 ~~~python
 import string #this is a builtin module you don't have to install it
 
@@ -24,7 +27,12 @@ print(chr(ascii))
 ~~~~
 
 ##### Binary (Base2)
-The unit of information. before to get recognized by the OS or the browser. Ascii code is represented as a binary of 8-bits (byte/octet). Every 8 bits get converted to ascii and get recognized.
+The unit of information. before to get recognized by the OS or the browser. Ascii code is represented as a binary of 8-bits (byte/octet).
+
+Composed by an alphabet of
+`01`
+
+Every 8 bits get converted to ascii and get recognized.
 `1100001 --> 97 --> 'a'`
 
 in python  
@@ -56,8 +64,12 @@ msg = "".join(chr(int(msg_bin[i:i+8],2)) for i in range(0,len(msg_bin),8))
 ~~~~
 
 ##### Hexadecimal (Base16)
+Used generally for [hashes](https://blog.emsisoft.com/fr/6799/qu-est-ce-qu-un-hash/).
 
-Like in binary. every byte (character) is represented by it's ascii code but in hexadecimal base
+Composed by an alphabet of
+`0123456789abcdef`
+
+Like in binary, every byte (character) is represented by it's ascii code but in hexadecimal base
 `61 (hex) --> 97 (decimal) --> 'a'`
 in python
 ```python
@@ -80,3 +92,21 @@ msg = binascii.unhexlify(msg_hex)
 ```
 
 ##### Base64
+Used generally in web to transfer data (binary files or images that are not representable by borwsers).
+
+Well the algorithm is not that important :p !
+
+Composed by an alphabet of `0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/=`
+
+In python
+```python
+import base64
+msg = b"sc2"
+
+print(base64.b64encode(msg))
+#output: b'c2My'
+
+print(base64.b64decode(b'c2My'))
+#output: b'sc2'
+
+```
