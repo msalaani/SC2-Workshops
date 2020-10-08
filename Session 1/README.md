@@ -110,3 +110,5 @@ print(base64.b64decode(b'c2My'))
 #output: b'sc2'
 
 ```
+
+And other more and more bases like base32,base58,base62,base85 etc...
