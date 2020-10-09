@@ -119,6 +119,8 @@ Useful links:
 - [dcode.fr](https://www.dcode.fr/)
 
 
+
+
 # Modern Cryptography
 ## RSA
 
@@ -132,10 +134,12 @@ For more details about the encryption and decryption, you can check [this](https
 
 Now let's go through the challenges of the last CTF.
 
+
 #### Requirements!
 We need some python packages to help us.
 Go to your command line, check you are connected to internet and type
 > pip install pycryptodome
+
 
 #### RSA 0
 The challenge provided 
@@ -167,6 +171,7 @@ print(long_to_bytes(m))
 #output: b'SC2Flag{W3lc0m3_t0_RSA_w0rld}'
 
 ```
+
 
 #### RSA 1
 The challenge provided 
