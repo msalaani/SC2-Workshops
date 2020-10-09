@@ -210,3 +210,8 @@ The challenge provided
 So to know what is behind this encrypted message we need to calculate d, which is calculated from p and q (which we do not have here). What we do ?? we factorize n (online from [here](http://factordb.com/) or [here](https://www.alpertron.com.ar/ECM.HTM))
 
 After getting the factors, the rest is to do similarly like the previous task but with the new values of p,q,n,e and c.
+
+#### Links
+* [CryptoBook](https://cryptobook.nakov.com/)
+* [CryptoHack](https://cryptohack.org/)
+* [Cryptopals](https://cryptopals.com/)
