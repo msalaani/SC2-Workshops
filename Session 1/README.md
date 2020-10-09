@@ -1,11 +1,12 @@
 ##### Table of Contents  
-[Encoding Systems](#Encodings)  
+[Encoding Systems](#Encodings)
+* [ASCII](#ASCII)
 [Emphasis](#emphasis)  
 
 ## Headers
 
 
-#Encodings
+# Encodings
 
 ##### ASCII ( Usually Base10 - Decimal )
 Every byte (8-bits) has an id (number) to allow the operating system(windows,linux,android,macOS) or browser or every other application to recognize it.
