@@ -56,7 +56,7 @@ print(bin(97))
 
 #example
 msg = "sc2"
-msg_bin = [bin(ord(char))[2:].zfill(8) for char in msg] #i added zfill(8) because python by default removes trailing "0" so the length won't be 8 but less (because all characters have ascii less than 127 = 2^8-1 that means a bit length less than 8
+msg_bin = [bin(ord(char))[2:].zfill(8) for char in msg] #i added zfill(8) because python by default removes trailing "0" so the length won't be 8 but less (because all characters have ascii less than 127 = 2^7-1 that means a bit length less than 8
 msg_bin = "".join(msg_bin)
 print(msg_bin)
 #output: 011100110110001100110010
