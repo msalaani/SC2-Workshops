@@ -1,10 +1,15 @@
 ##### Table of Contents  
 [Encoding Systems](#Encodings)
-* [ASCII](#ASCII)
-[Emphasis](#emphasis)  
-
-## Headers
-
+* [ASCII](#ascii--usually-base10---decimal-)
+* [Binary](#binary-base2)
+* [Hexadecimal](#hexadecimal-base16)
+* [Base64](#base64)
+* [Links](#links)
+[Modern Cryptography](#modern-cryptography)
+* [RSA](#rsa)
+  + [Requirements](#requirements)
+  + [RSA 0](#rsa-0)
+  + [RSA 1](#rsa-1)
 
 # Encodings
 
@@ -121,7 +126,7 @@ print(base64.b64decode(b'c2My'))
 
 And other more and more bases like base32,base58,base62,base85 etc...
 
-
+##### Links
 Useful links:
 - [CyberChef](https://gchq.github.io/CyberChef/)
 - [dcode.fr](https://www.dcode.fr/)
