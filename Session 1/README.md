@@ -145,6 +145,20 @@ The security of RSA relies on the practical difficulty of factoring the product 
 More often, RSA is used to transmit shared keys for symmetric key cryptography, which are then used for bulk encryption-decryption. 
 For more details about the encryption and decryption, you can check [this](https://en.wikipedia.org/wiki/RSA_(cryptosystem)). (It's quite enough to know all about RSA encryption)
 
+### RSA Key Generation
+* Choose two large prime numbers p and q
+* Calculate n=p*q
+* Select public key e such that it is not a factor of (p-1)*(q-1)
+* Select private key d such that the following equation is true (d*e)mod(p-1)(q-1)=1 or d is inverse of E in modulo (p-1)*(q-1)
+
+### RSA Encryption
+* Convert a string/bytes message to an integer (String/bytes --> Hex --> Decimal)
+* Calculate `cipher = message ^ e mod n`
+
+### RSA Decryption
+* Calculate `message = cipher ^ d mod n`
+* Convert cipher to bytes/string (Decimal --> Hex --> String/bytes)
+
 
 Now let's go through the challenges of the last CTF.
 
