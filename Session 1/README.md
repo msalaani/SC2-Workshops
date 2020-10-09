@@ -118,3 +118,62 @@ Useful links:
 - [CyberChef](https://gchq.github.io/CyberChef/)
 - [dcode.fr](https://www.dcode.fr/)
 
+
+# Modern Cryptography
+## RSA
+
+Brievely, RSA is a public-key cryptosystem that is widely used for secure data transmission.
+
+The security of RSA relies on the practical difficulty of factoring the product of two large prime numbers, the "factoring problem". Because of this, it is not commonly used to directly encrypt user data.
+
+More often, RSA is used to transmit shared keys for symmetric key cryptography, which are then used for bulk encryption-decryption. 
+For more details about the encryption and decryption, you can check [this](https://en.wikipedia.org/wiki/RSA_(cryptosystem)). (It's quite enough to know all about RSA encryption)
+
+
+Now let's go through the challenges of the last CTF.
+
+#### Requirements!
+We need some python packages to help us.
+Go to your command line, check you are connected to internet and type
+> pip install pycryptodome
+
+#### RSA 0
+The challenge provided 
+* *p,q* (prime numbers,must be private) 
+* *n = p \* q* ( modulus - public) 
+* *e* (Public Exponent)
+* *c* (ciphertext)
+
+To decrypt an RSA encrypted cipher we need to get the private exponent *d = modular_inverse(e,phi(n))*
+
+So nothing is left but implementing it in python
+```python
+from Crypto.Util.number import inverse,long_to_bytes
+#inverse = inverse modular that means ( a * inverse(a,n) ) = 1 mod n
+#long_to_bytes is a shortcut for unhexlify(hex(enc)) with enc a decimal number! (A way to convert data like we saw in System encodings
+
+p = ...
+q = ...
+n = ...
+e = ...
+c = ...
+assert n == p * q # just to make sure that n == p * q
+
+phi = (p - 1) * (q - 1) # this is Euler totient (betbi3a 9rineha fel prepa :p , malezmch tet7fadh 3la ases dima (p-1)*(q-1) lezem ta3ref relation lkemla 5atr we need it ;)
+d = inverse(e,phi)
+m = pow(c,d,n)
+
+print(long_to_bytes(m))
+#output: b'SC2Flag{W3lc0m3_t0_RSA_w0rld}'
+
+```
+
+#### RSA 1
+The challenge provided 
+* *n* ( modulus - public) 
+* *e* (Public Exponent)
+* *c* (ciphertext)
+
+So to know what is behind this encrypted message we need to calculate d, which is calculated from p and q (which we do not have here). What we do ?? we factorize n (online from [here](http://factordb.com/) or [here](https://www.alpertron.com.ar/ECM.HTM))
+
+After getting the factors, the rest is to do similarly like the previous task but with the new values of p,q,n,e and c.
